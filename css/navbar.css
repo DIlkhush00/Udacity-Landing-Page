@@ -1,0 +1,21 @@
+header {
+    background: hsl(225, 57%, 21%);
+    border-bottom: 17px solid hsl(333, 86%, 55%);
+}
+.navbar {
+    height: 2.5rem;
+    padding-top: 3.125rem;
+}
+
+.logo {
+    gap: 1rem;
+}
+
+.logo img {
+    height: 2.5rem;
+}
+
+.logo span {
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+}
