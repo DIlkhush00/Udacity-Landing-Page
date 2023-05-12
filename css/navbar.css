@@ -2,13 +2,19 @@ header {
     background: hsl(225, 57%, 21%);
     border-bottom: 17px solid hsl(333, 86%, 55%);
 }
+
 .navbar {
+    justify-content: space-between;
     height: 2.5rem;
-    padding-top: 3.125rem;
+    /* padding-top: 3.125rem; */
+    padding-block: 3.125rem;
+    padding-inline: 1.25rem;
 }
 
+/* logo */
 .logo {
     gap: 1rem;
+    padding-right: 5.125rem;
 }
 
 .logo img {
@@ -18,4 +24,59 @@ header {
 .logo span {
     color: hsl(0, 0%, 100%);
     font-size: 1rem;
+}
+
+/* navbar links */
+.nav_items {
+    list-style: none;
+}
+
+.nav_items li {
+    padding-right: 2.25rem;
+}
+
+.nav_items li:hover {
+
+}
+
+.links_wrapper {
+    flex: 1;
+}
+
+#sign_in {
+    margin-right: 2.5rem;
+}
+
+.sign_wrapper {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* Hamburger Menu */
+.btn_ham {
+    display: none;
+}
+
+.btn_ham > span {
+    margin-block: .3125rem;
+    display: block;
+    width: 1.5rem;
+    height: .1875rem;
+    background-color: hsl(225, 27%, 63%);
+}
+
+/* For mobile and tablet devices */
+
+@media screen and (max-width: 1036px) {
+    .btn_dark {
+        display: none;
+    }
+}
+@media screen and (max-width: 800px) {
+    .btn_ham {
+        display: block;
+    }
+    .nav_items {
+        display: none;
+    }
 }
