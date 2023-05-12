@@ -43,3 +43,10 @@ ham.addEventListener('click', ()=>{
     div.classList.toggle('sliding_menu');
     ham.parentElement.classList.toggle('open');
 })
+
+// reloads the webpage when clicking on the logo
+const logo = document.querySelector('#logo');
+
+logo.addEventListener('click', ()=>{
+    window.location.href = '/';
+})
