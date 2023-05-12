@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* colors */
+:root {
+    --grayish-blue: hsl(225, 27%, 63%);
+    --redish-pink: hsl(333, 86%, 55%);
+    --darkblue: hsl(225, 57%, 21%);
+    --white: hsl(0, 0%, 100%);
+}
+
 html {
     font-size: 100%;
     box-sizing: border-box;
@@ -27,7 +35,7 @@ ul {
 a {
     text-decoration: none;
     font-size: 0.875rem;
-    color: hsl(225, 27%, 63%);
+    color: var(--grayish-blue);
 }
 
 .button {
@@ -40,8 +48,8 @@ a {
 }
 
 .btn_light {
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(333, 86%, 55%);
+    color: var(--white);
+    background-color: var(--redish-pink);
 }
 
 /* helper class */

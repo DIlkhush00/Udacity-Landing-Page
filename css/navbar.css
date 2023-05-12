@@ -1,6 +1,6 @@
 header {
-    background: hsl(225, 57%, 21%);
-    border-bottom: 17px solid hsl(333, 86%, 55%);
+    background: var(--darkblue);
+    border-bottom: 17px solid var(--redish-pink);
 }
 
 .navbar {
@@ -15,6 +15,11 @@ header {
 .logo {
     gap: 1rem;
     padding-right: 5.125rem;
+    user-select: none;
+}
+
+.logo:hover {
+    cursor: pointer;
 }
 
 .logo img {
@@ -22,8 +27,9 @@ header {
 }
 
 .logo span {
-    color: hsl(0, 0%, 100%);
-    font-size: 1rem;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 /* navbar links */
@@ -32,15 +38,30 @@ header {
 }
 
 .nav_items li {
-    padding-right: 2.25rem;
-}
-
-.nav_items li:hover {
-
+    position: relative;
+    margin-right: 2.25rem;
 }
 
 .links_wrapper {
     flex: 1;
+}
+
+/* links hovering effect */
+.nav_items li a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--redish-pink);
+    left: 0;
+    bottom: -0.9375rem;
+    transform: scale(0);
+    transition: transform 0.35s ease-in-out;
+}
+
+.nav_items a:hover::before {
+    transform: scale(1);
 }
 
 #sign_in {
@@ -50,6 +71,14 @@ header {
 .sign_wrapper {
     flex: 1;
     justify-content: flex-end;
+    transition: all 0.35s ease-in-out;
+}
+
+.sign_wrapper a:hover {
+    color: var(--redish-pink);
+}
+.sign_wrapper .btn_dark:hover {
+    border-color: var(--redish-pink);
 }
 
 /* Hamburger Menu */
@@ -57,12 +86,58 @@ header {
     display: none;
 }
 
+.btn_ham:hover {
+    cursor: pointer;
+}
+
 .btn_ham > span {
     margin-block: .3125rem;
     display: block;
     width: 1.5rem;
     height: .1875rem;
-    background-color: hsl(225, 27%, 63%);
+    background-color: var(--grayish-blue);
+    transition: all 0.3s ease-in-out;
+    transform-origin: 1px 2px;
+}
+
+.open .btn_ham > span:first-child {
+    transform: rotate(45deg);
+}
+.open .btn_ham > span:nth-child(2) {
+    opacity: 0;
+}
+.open .btn_ham > span:last-child {
+    transform: rotate(-45deg);
+}
+
+/* Mobile menu */
+.mobile_menu_container {
+    position: absolute;
+    top: 6.25rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--darkblue);
+    box-shadow: 0 8px 8px var(--grayish-blue);
+    padding-block: 1.25rem;
+    transition: all 0.35s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: -1;
+}
+.mobile_menu {
+    list-style: none;
+    text-align: center;
+}
+.mobile_menu li {
+    padding-block: 1.5rem;
+}
+.sliding_menu {
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(0);
+    overflow: hidden;
 }
 
 /* For mobile and tablet devices */
