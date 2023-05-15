@@ -20,11 +20,11 @@ for (let i = 0; i < desktop_links.length; i++) {
 
 //building mobile menu
 const nav = document.querySelector('#navbar');
-const div  = document.createElement('div');
+const mobile_div  = document.createElement('div');
 const navList = document.createElement('ul');
 const mobile_links = [`<a href="#features">Features</a>`, `<a href="#pricing">Pricing</a>`, `<a href="#reviews">Reviews</a>`, `<a href="#contacts">Contacts</a>`]
 
-div.classList.add('mobile_menu_container');
+mobile_div.classList.add('mobile_menu_container');
 navList.classList.add('mobile_menu');
 
 
@@ -34,16 +34,30 @@ for (html of mobile_links) {
     link.innerHTML = html;
     navList.appendChild(link);
 }
-div.append(navList);
-nav.append(div);
+mobile_div.append(navList);
+nav.append(mobile_div);
+
 
 //toggling hamburger menu
 const ham = document.querySelector('.btn_ham');
 ham.addEventListener('click', ()=>{
-    div.classList.toggle('sliding_menu');
-    document.body.classList.toggle('no_scrolling')
+    mobile_div.classList.toggle('sliding_menu');
+    document.body.classList.toggle('no_scrolling') //reconsider it
     ham.parentElement.classList.toggle('open');
 })
+
+
+//Making sure mobile menu don't appear on desktop
+const breakpoint = window.matchMedia('(min-width: 800px)');
+function handleScreenResize(e) {
+    if (e.matches && mobile_div.classList.contains('sliding_menu')) {
+      mobile_div.classList.remove('sliding_menu');
+    }
+}
+
+handleScreenResize(breakpoint);
+breakpoint.addEventListener('change', handleScreenResize);
+
 
 // reloads the webpage when clicking on the logo
 const logo = document.querySelector('#logo');

@@ -1,0 +1,56 @@
+
+.main_features {
+    padding-top: 4.75rem;
+}
+
+.main_features_text {
+    text-align: center;
+}
+.main_features_text h2 {
+    font-size: 1.625rem;
+    color: var(--darkblue);
+    margin-bottom: 1.25rem;
+}
+
+/* icon section */
+.features_leverage {
+    padding-block: 4.4375rem;
+    display: flex;
+    gap: 1.25rem;
+}
+.feature_card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.feature_card_text {
+    text-align: center;
+}
+.feature_card_image {
+    /* padding-bottom: 1.5rem; */
+}
+.feature_card_text .title {
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--darkblue);
+}
+.feature_card_text .description {
+    color: var(--grayish-blue);
+}
+
+/* responsive feature card section */
+@media screen and (max-width: 760px) {
+    .feature_card {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+    }
+    .feature_card_text {
+        text-align: start;
+    }
+    .features_leverage {
+        flex-direction: column;
+    }
+}

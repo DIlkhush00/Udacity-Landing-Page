@@ -112,7 +112,6 @@ header {
 
 /* Mobile menu */
 .mobile_menu_container {
-    display: block;
     position: absolute;
     top: 6.25rem;
     left: 0;

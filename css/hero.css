@@ -36,6 +36,7 @@
 }
 
 .hero_text h1 {
+    color: var(--white);
     margin-bottom: .8125rem;
     font-size: 2rem;
 }
