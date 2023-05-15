@@ -41,6 +41,7 @@ nav.append(div);
 const ham = document.querySelector('.btn_ham');
 ham.addEventListener('click', ()=>{
     div.classList.toggle('sliding_menu');
+    document.body.classList.toggle('no_scrolling')
     ham.parentElement.classList.toggle('open');
 })
 
@@ -50,3 +51,4 @@ const logo = document.querySelector('#logo');
 logo.addEventListener('click', ()=>{
     window.location.href = '/';
 })
+
