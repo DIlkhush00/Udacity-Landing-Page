@@ -1,8 +1,8 @@
 //adding links to navbar (for desktop)
 const desktop_links = [
     {text: "Features", url: "#features"},
+    {text: "Services", url: "#services"},
     {text: "Pricing", url: "#pricing"},
-    {text: "Reviews", url: "#reviews"},
     {text: "Contacts", url: "#contacts"}
 ]
 
@@ -22,7 +22,7 @@ for (let i = 0; i < desktop_links.length; i++) {
 const nav = document.querySelector('#navbar');
 const mobile_div  = document.createElement('div');
 const navList = document.createElement('ul');
-const mobile_links = [`<a href="#features">Features</a>`, `<a href="#pricing">Pricing</a>`, `<a href="#reviews">Reviews</a>`, `<a href="#contacts">Contacts</a>`]
+const mobile_links = [`<a href="#features">Features</a>`,`<a href="#services">Services</a>`, `<a href="#pricing">Pricing</a>`, `<a href="#contacts">Contacts</a>`]
 
 mobile_div.classList.add('mobile_menu_container');
 navList.classList.add('mobile_menu');

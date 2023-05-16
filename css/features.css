@@ -27,9 +27,6 @@
 .feature_card_text {
     text-align: center;
 }
-.feature_card_image {
-    /* padding-bottom: 1.5rem; */
-}
 .feature_card_text .title {
     padding-bottom: 1rem;
     font-size: 1rem;
@@ -41,13 +38,16 @@
 }
 
 /* responsive feature card section */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
     .feature_card {
         flex-direction: row;
         align-items: flex-start;
         padding-bottom: 1rem;
     }
     .feature_card_text {
+        text-align: start;
+    }
+    .main_features_text {
         text-align: start;
     }
     .features_leverage {
