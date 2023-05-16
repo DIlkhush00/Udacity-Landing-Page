@@ -71,6 +71,8 @@ header {
 .sign_wrapper {
     flex: 1;
     justify-content: flex-end;
+}
+.sign_wrapper a {
     transition: all 0.35s ease-in-out;
 }
 

@@ -60,11 +60,14 @@ breakpoint.addEventListener('change', handleScreenResize);
 
 
 // reloads the webpage when clicking on the logo
-const logo = document.querySelector('#logo');
+const logos = document.querySelectorAll('.reload_logo');
 
-logo.addEventListener('click', ()=>{
-    window.location.href = '/';
-})
+for (const logo of logos) {
+    logo.addEventListener('click', ()=>{
+        window.location.href = '/';
+    })
+}
+
 
 //Scroll Pricing cards to the middle card by default
 const cardsContainerWrapper = document.querySelector('.pricing_cards_wrapper');
@@ -80,4 +83,15 @@ cardsContainerWrapper.scrollTo({
     behavior: 'smooth',
 });
 
-//buiding footer navigation
+//building footer navigation
+const footer_navigation = document.querySelector('.footer_links');
+
+for (let i = 0; i < desktop_links.length; i++) {
+    const link = desktop_links[i];
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.textContent = link.text;
+    a.href = link.url;
+    li.appendChild(a);
+    footer_navigation.appendChild(li); //adding list of links to footer
+}

@@ -92,6 +92,20 @@
     color: var(--darkblue);
 }
 
+/* bottom */
+.bottom a {
+    transition: all .35s ease-in-out;
+}
+.first-last a {
+    transition: all .35s ease-in-out;
+}
+.first-last a:hover {
+    color: var(--redish-pink);   
+}
+.first-last .btn_dark:hover {
+    border-color: var(--redish-pink);
+}
+
 /* Responsive pricing cards */
 @media screen and (max-width: 957px) {
     .pricing_cards_wrapper {
