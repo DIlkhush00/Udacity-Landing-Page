@@ -66,3 +66,16 @@ logo.addEventListener('click', ()=>{
     window.location.href = '/';
 })
 
+//Scroll Pricing cards to the middle card by default
+const cardsContainerWrapper = document.querySelector('.pricing_cards_wrapper');
+const cardsContainer = document.querySelector('#pricing_cards');
+const middleCard = Math.floor(cardsContainer.childElementCount/2);
+const middleCardElement = cardsContainer.children[middleCard];
+const middleCardPosition = middleCardElement.offsetLeft + middleCardElement.offsetWidth / 2;
+const containerWidth = cardsContainer.offsetWidth;
+const scrollOffset = containerWidth - middleCardPosition;
+
+cardsContainerWrapper.scrollTo({
+    left: scrollOffset,
+    behavior: 'smooth',
+});

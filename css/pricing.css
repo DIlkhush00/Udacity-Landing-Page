@@ -1,0 +1,106 @@
+.footer {
+    background: var(--darkblue);
+    border-top: 17px solid var(--redish-pink);
+    padding-top: 6.25rem;
+}
+.pricing {
+    flex-direction: column;
+}
+.pricing_text {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.pricing_text h2 {
+    color: var(--white);
+    padding-bottom: 1.875rem;
+}
+
+/* Pricing cards */
+.pricing_cards_wrapper {
+    max-width: 100%;
+}
+.pricing_cards {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+.pricing_card {
+    flex: 1 0 17.5rem;
+    padding: 3.125rem 4.375rem 4.375rem 3.75rem; /* top right bottom left*/
+    text-align: center;
+    border-radius: 1.875rem;
+}
+.pricing_card .upper > span {
+    display: block;
+}
+.pricing_card .middle > span {
+    display: block;
+}
+.upper {
+    padding-bottom: 2.125rem;
+}
+.upper .users {
+    font-size: .875rem;
+    color: var(--grayish-blue);
+    padding-bottom: 2.3125rem;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+.upper .plan {
+    color: var(--white);
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 1.15rem;
+    margin-bottom: .625rem;
+}
+.middle {
+    padding-bottom: 3.5rem;
+}
+.middle .price {
+    line-height: 1.15rem;
+    padding-bottom: .75rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+.middle .price > span {
+    font-size: 1.25rem;
+}
+.middle .duration {
+    font-size: .875rem;
+    color: var(--grayish-blue);
+}
+.bottom a {
+    display: block;
+}
+
+.pricing_card:nth-child(2n+1) {
+    background-color: hsl(224, 67%, 18%);
+}
+
+/* for middle card */
+.pricing_card:nth-child(2) {
+    background-color: var(--white);
+}
+.pricing_card:nth-child(2) .plan {
+    color: var(--darkblue);
+}
+.pricing_card:nth-child(2) .price {
+    color: var(--darkblue);
+}
+
+/* Responsive pricing cards */
+@media screen and (max-width: 957px) {
+    .pricing_cards_wrapper {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    .pricing_cards {
+        width: 100%;
+        justify-content: start;
+    }
+    .pricing_card {
+        scroll-snap-align: center;
+    }
+}
