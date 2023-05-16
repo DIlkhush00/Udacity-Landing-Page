@@ -5,6 +5,8 @@
 }
 .pricing {
     flex-direction: column;
+    padding-bottom: 6.25rem;
+    border-bottom: 1px solid var(--grayish-blue);
 }
 .pricing_text {
     text-align: center;

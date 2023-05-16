@@ -15,7 +15,7 @@ for (let i = 0; i < desktop_links.length; i++) {
     a.textContent = link.text;
     a.href = link.url;
     li.appendChild(a);
-    navbar.appendChild(li);
+    navbar.appendChild(li); //adding list of links to navbar
 }
 
 //building mobile menu
@@ -79,3 +79,5 @@ cardsContainerWrapper.scrollTo({
     left: scrollOffset,
     behavior: 'smooth',
 });
+
+//buiding footer navigation

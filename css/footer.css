@@ -1,0 +1,15 @@
+.footer_footer {
+    justify-content: space-between;
+    padding-block: 4.375rem;
+}
+
+.footer_logo {
+    max-width: 8.75rem;
+}
+.footer_logo img {
+    width: 100%;
+}
+
+.footer_social_links img:not(:last-child) {
+    padding-right: 2.5rem;
+}
