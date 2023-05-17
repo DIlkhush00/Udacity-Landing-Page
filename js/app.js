@@ -45,10 +45,26 @@ nav.append(mobile_div);
 
 //toggling hamburger menu
 const ham = document.querySelector('.btn_ham');
-ham.addEventListener('click', ()=>{
+
+function toggleMenu(){
     mobile_div.classList.toggle('sliding_menu');
     document.body.classList.toggle('no_scrolling') //reconsider it
     ham.parentElement.classList.toggle('open');
+}
+
+ham.addEventListener('click', ()=>{
+    toggleMenu();
+})
+
+//Closing mobile menu when a link is clicked
+const all_mobile_links = document.querySelectorAll('.mobile_menu li a');
+
+all_mobile_links.forEach(singleLink => {
+    singleLink.addEventListener('click', (e)=>{
+        e.preventDefault();
+        toggleMenu();
+        window.location.href = singleLink.href;
+    })
 })
 
 
@@ -118,5 +134,6 @@ function setActiveState(){
 window.addEventListener('scroll', setActiveState);
 
 //hides navbar if user isn't scrolling
+
 
 //scroll to top button
