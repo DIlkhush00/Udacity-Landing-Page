@@ -79,6 +79,10 @@ a {
     color: var(--grayish-blue);
 }
 
+.nav_items .active a::before {
+    transform: scale(1);
+}
+
 /* helper class */
 .container {
     margin: auto;

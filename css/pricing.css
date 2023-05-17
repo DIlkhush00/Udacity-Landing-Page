@@ -1,5 +1,8 @@
 .footer {
     background: var(--darkblue);
+}
+.pricing_wrapper {
+    background: var(--darkblue);
     border-top: 17px solid var(--redish-pink);
     padding-top: 6.25rem;
 }

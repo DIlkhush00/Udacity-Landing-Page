@@ -1,28 +1,33 @@
+//function to create navigation menu dynamically
+const buildNavbar = (links, parent)=>{
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.textContent = link.text;
+        a.href = link.url;
+        li.appendChild(a);
+        parent.appendChild(li); //adding list of links to navbar
+    }
+}
+
 //adding links to navbar (for desktop)
 const desktop_links = [
+    {text: "Home", url: "#home"},
     {text: "Features", url: "#features"},
     {text: "Services", url: "#services"},
     {text: "Pricing", url: "#pricing"},
-    {text: "Contacts", url: "#contacts"}
 ]
 
 const navbar = document.querySelector('.nav_items');
 
-for (let i = 0; i < desktop_links.length; i++) {
-    const link = desktop_links[i];
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.textContent = link.text;
-    a.href = link.url;
-    li.appendChild(a);
-    navbar.appendChild(li); //adding list of links to navbar
-}
+buildNavbar(desktop_links, navbar);
 
 //building mobile menu
 const nav = document.querySelector('#navbar');
 const mobile_div  = document.createElement('div');
 const navList = document.createElement('ul');
-const mobile_links = [`<a href="#features">Features</a>`,`<a href="#services">Services</a>`, `<a href="#pricing">Pricing</a>`, `<a href="#contacts">Contacts</a>`]
+const mobile_links = [ `<a href="#home">Home</a>`, `<a href="#features">Features</a>`,`<a href="#services">Services</a>`, `<a href="#pricing">Pricing</a>`];
 
 mobile_div.classList.add('mobile_menu_container');
 navList.classList.add('mobile_menu');
@@ -74,9 +79,10 @@ const cardsContainerWrapper = document.querySelector('.pricing_cards_wrapper');
 const cardsContainer = document.querySelector('#pricing_cards');
 const middleCard = Math.floor(cardsContainer.childElementCount/2);
 const middleCardElement = cardsContainer.children[middleCard];
+
 const middleCardPosition = middleCardElement.offsetLeft + middleCardElement.offsetWidth / 2;
 const containerWidth = cardsContainer.offsetWidth;
-const scrollOffset = containerWidth - middleCardPosition;
+const scrollOffset =  middleCardPosition - containerWidth / 2;
 
 cardsContainerWrapper.scrollTo({
     left: scrollOffset,
@@ -85,13 +91,32 @@ cardsContainerWrapper.scrollTo({
 
 //building footer navigation
 const footer_navigation = document.querySelector('.footer_links');
+buildNavbar(desktop_links, footer_navigation);
 
-for (let i = 0; i < desktop_links.length; i++) {
-    const link = desktop_links[i];
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.textContent = link.text;
-    a.href = link.url;
-    li.appendChild(a);
-    footer_navigation.appendChild(li); //adding list of links to footer
+
+//sets active states
+function setActiveState(){
+    const home = document.getElementById('home');
+    const features = document.getElementById('features');
+    const services = document.getElementById('services');
+    const pricing = document.getElementById('pricing');
+    const sectionItems = [home, features, services, pricing];
+
+    const setLinks = document.querySelectorAll('.nav_items li a');
+
+    sectionItems.forEach(section => {
+        let Offset = section.getBoundingClientRect();
+        if(Offset.top <= 0 + Offset.bottom / 8 ){
+            setLinks.forEach(setLink => {
+                setLink.parentElement.classList.remove('active');
+                document.querySelector(`.nav_items li a[href *= ${section.id}]`).parentElement.classList.add('active');
+            })
+        }
+    })
 }
+
+window.addEventListener('scroll', setActiveState);
+
+//hides navbar if user isn't scrolling
+
+//scroll to top button

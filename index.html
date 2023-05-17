@@ -12,30 +12,32 @@
 <body>
     <header>
         <div class="container wrapper">
-            <nav id="navbar" class="navbar f-ai-c">
-                <div class="links_wrapper f-ai-c">
-                    <div id="logo" class="logo f-ai-c reload_logo">
-                        <img src="assets/logo.png" alt="logo">
-                        <span>ANALYTICS</span>
+            <div class="fixed_nav">
+                <nav id="navbar" class="navbar container f-ai-c">
+                    <div class="links_wrapper f-ai-c">
+                        <div id="logo" class="logo f-ai-c reload_logo">
+                            <img src="assets/logo.png" alt="logo">
+                            <span>ANALYTICS</span>
+                        </div>
+                        <ul class="nav_items f-ai-c hide_for_mobile">
+                            <!-- This menu will be created dynamically -->
+                        </ul>
                     </div>
-                    <ul class="nav_items f-ai-c hide_for_mobile">
-                        <!-- This menu will be created dynamically -->
-                    </ul>
-                </div>
-                <div class="sign_wrapper f-ai-c">
-                    <a href="#" id="sign_in">Sign in</a>
-                    <a href="#" class="button btn_dark nav_btn hide_for_mobile">
-                        Sign Up
-                    </a>
-                </div>
-                <div class="btn_ham hide_for_desktop">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+                    <div class="sign_wrapper f-ai-c">
+                        <a href="#" id="sign_in">Sign in</a>
+                        <a href="#" class="button btn_dark nav_btn hide_for_mobile">
+                            Sign Up
+                        </a>
+                    </div>
+                    <div class="btn_ham hide_for_desktop">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
 
-            <section class="hero f-ai-c">
+            <section id="home" class="hero f-ai-c">
                 <div class="hero_text">
                     <h1>Monitor your business on real-time dashboard</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam.</p>
@@ -128,8 +130,7 @@
             </div>
         </div>
     </section>
-
-    <footer id="pricing" class="footer">
+    <section id="pricing" class="pricing_wrapper">
         <div class="pricing container f-ai-c">
             <div class="pricing_text">
                 <h2>Pricing Plans</h2>
@@ -180,7 +181,9 @@
                 </div>
             </div>
         </div>
-        <div id="contacts" class="footer_footer container f-ai-c">
+    </section>
+    <footer class="footer">
+        <div class="footer_footer container f-ai-c">
             <div class="footer_logo reload_logo">
                 <img src="assets/footer-logo.png" alt="Analytics logo">
             </div>
