@@ -158,7 +158,7 @@ function showScrollButton() {
 }
 
 function hideNavbar() {
-    hideScrollButton();
+    hideScrollButton(); //hides scroll to top button
     let flag = !ham.parentElement.classList.contains('open') && window.scrollY > 0 && fixed_navbar.classList.contains('show_navbar'); //some checks to prevent navbar from hiding if any of these condition is false
     if(flag){
         fixed_navbar.classList.remove('show_navbar');
@@ -167,7 +167,7 @@ function hideNavbar() {
 }
 
 function showNavbar() {
-    showScrollButton();
+    showScrollButton(); //shows scroll to top button
     if(fixed_navbar.classList.contains('hide_navbar')){
         fixed_navbar.classList.remove('hide_navbar');
     }
