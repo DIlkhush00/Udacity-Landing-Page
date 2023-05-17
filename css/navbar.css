@@ -4,11 +4,12 @@ header {
     border-bottom: 17px solid var(--redish-pink);
 }
 .fixed_nav {
-    background-color: rgba(23, 38, 84,.9);
+    background-color: rgba(23, 38, 84, .9);
     position: fixed;
     left: 0;
     right: 0;
     z-index: 999;
+    transition: top .35s ease-in-out;
 }
 
 .navbar {
@@ -126,7 +127,7 @@ header {
     left: 0;
     width: 100%;
     height: auto;
-    background-color: rgba(23, 38, 84,.9);
+    background-color: rgba(23, 38, 84, .9);
     padding-block: 1.25rem;
     transition: all 0.35s ease-in-out;
     transform: translateY(-100%);
@@ -141,7 +142,25 @@ header {
     padding-block: 1.5rem;
 }
 .sliding_menu {
-    z-index: 1;
+    z-index: 998;
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Background layer */
+.bg_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: -3;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: opacity .35s ease-in-out;
+}
+.layer_activate {
+    z-index: 997;
     opacity: 1;
     transform: translateY(0);
 }

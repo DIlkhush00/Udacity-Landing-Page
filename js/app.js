@@ -45,10 +45,12 @@ nav.append(mobile_div);
 
 //toggling hamburger menu
 const ham = document.querySelector('.btn_ham');
+const layer = document.querySelector('.bg_layer');
 
 function toggleMenu(){
     mobile_div.classList.toggle('sliding_menu');
-    document.body.classList.toggle('no_scrolling') //reconsider it
+    layer.classList.toggle('layer_activate');
+    document.body.classList.toggle('no_scrolling');
     ham.parentElement.classList.toggle('open');
 }
 
@@ -133,7 +135,57 @@ function setActiveState(){
 
 window.addEventListener('scroll', setActiveState);
 
-//hides navbar if user isn't scrolling
+//hides navbar when user isn't scrolling
+let scrollTimer;
+const fixed_navbar = document.querySelector('.fixed_nav');
+const scroll_button = document.querySelector('.scroll_to_top');
 
+function hideScrollButton() {
+    if(scroll_button.classList.contains('show_scroll_btn')){
+        scroll_button.classList.remove('show_scroll_btn');
+        scroll_button.classList.add('hide_scroll_btn');
+    }
+}
+
+function showScrollButton() {
+    let flag = window.scrollY > window.visualViewport.height;
+    if(flag) {
+        scroll_button.classList.add('show_scroll_btn');
+    }
+    if(scroll_button.classList.contains('hide_scroll_btn')){
+        scroll_button.classList.remove('hide_scroll_btn');
+    }
+}
+
+function hideNavbar() {
+    hideScrollButton();
+    let flag = !ham.parentElement.classList.contains('open') && window.scrollY > 0 && fixed_navbar.classList.contains('show_navbar'); //some checks to prevent navbar from hiding if any of these condition is false
+    if(flag){
+        fixed_navbar.classList.remove('show_navbar');
+        fixed_navbar.classList.add('hide_navbar');
+    }
+}
+
+function showNavbar() {
+    showScrollButton();
+    if(fixed_navbar.classList.contains('hide_navbar')){
+        fixed_navbar.classList.remove('hide_navbar');
+    }
+    fixed_navbar.classList.add('show_navbar');
+}
+
+function handleNavbar() {
+    clearTimeout(scrollTimer);
+    showNavbar();
+    scrollTimer = setTimeout(hideNavbar, 2000);
+}
+
+window.addEventListener('scroll', handleNavbar);
 
 //scroll to top button
+scroll_button.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+})

@@ -97,6 +97,47 @@ a {
 .no_scrolling {
     overflow: hidden;
 }
+.hide_navbar {
+    top: -6.25rem;
+}
+.show_navbar {
+    top: 0
+}
+/*scroll to top */
+.scroll_to_top {
+    position: fixed;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 30px;
+    background-color: var(--redish-pink);
+    bottom: 2rem;
+    right: -3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s ease-in-out;
+}
+.scroll_to_top:hover {
+    cursor: pointer;
+    background-color: hsl(224, 67%, 18%);
+}
+.scroll_to_top svg {
+    width: 6.25rem
+}
+.scroll_to_top svg path{
+    fill: var(--white);
+    transition: fill .35s ease-in-out;
+}
+.scroll_to_top:hover svg path {
+    fill: var(--grayish-blue);
+}
+/* showing or hiding scroll to top button */
+.show_scroll_btn {
+    right: 2rem;
+}
+.hide_scroll_btn {
+    right: -3.125rem;
+}
 
 /* for smaller screens */
 @media screen and (max-width: 497px) {
