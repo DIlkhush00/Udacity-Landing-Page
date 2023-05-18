@@ -87,7 +87,7 @@ const logos = document.querySelectorAll('.reload_logo');
 
 for (const logo of logos) {
     logo.addEventListener('click', ()=>{
-        window.location.href = '/';
+        window.location.href = '/Udacity-Landing-Page/';
     })
 }
 
